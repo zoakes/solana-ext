@@ -3,6 +3,7 @@ use borsh::{BorshDeserialize, BorshSerialize};
 // use solana_program::pubkey::Pubkey;
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::pubkey::Pubkey;
+
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
 pub struct LiquidityPoolState {
     status: u64,
@@ -61,7 +62,7 @@ pub struct LiquidityPoolState {
 
 
 const RAYDIUM_POOL_STR: &'static str = "AefWzbX8jCyjzzbkTk4kDqTQFWk7pk9AXnjZbLdVfKaR";
- // https://www.geckoterminal.com/solana/pools/AefWzbX8jCyjzzbkTk4kDqTQFWk7pk9AXnjZbLdVfKaR
+// https://www.geckoterminal.com/solana/pools/AefWzbX8jCyjzzbkTk4kDqTQFWk7pk9AXnjZbLdVfKaR
 
 
 fn fetch_and_deserialize_pool_state(client: &RpcClient, pool_pubkey: &Pubkey) -> Result<LiquidityPoolState, Box<dyn std::error::Error>> {
